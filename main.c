@@ -9,8 +9,6 @@ int main(void)
 	printf("ft_isalnum('_') = %d (esperado 0)\n", ft_isalnum('_'));
     printf("ft_isalnum('a') = %d (esperado 1)\n", ft_isalnum('a'));
 
-    return 0;
-
     // Probar ft_isalpha
     printf("ft_isalpha('7') = %d (esperado 0)\n", ft_isalpha('7'));
     printf("ft_isalpha('a') = %d (esperado 1)\n", ft_isalpha('a'));
@@ -28,9 +26,15 @@ int main(void)
 
     // Probar ft_isprint
     printf("ft_isprint('7') = %d (esperado 1)\n", ft_isprint('7'));
-    printf("ft_isprint('\n') = %d (esperado 0)\n", ft_isprint('\n'));
+    printf("ft_isprint('\\n') = %d (esperado 0)\n", ft_isprint('\n'));
+
+    //Probar ft_strlen
+    printf("ft_strlen(\"Celta\") = %zu (esperado 5)\n", ft_strlen("Celta"));
+    printf("ft_strlen(\"42\") = %zu (esperado 2)\n", ft_strlen("42"));
+    printf("ft_strlen("") = %zu (esperado 0)\n", ft_strlen(""));
 
 
+    return 0;
 
 }
 
