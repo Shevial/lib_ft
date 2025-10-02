@@ -26,6 +26,10 @@ int main(void)
     printf("ft_isascii('a') = %d (esperado 1)\n", ft_isascii('a'));
     printf("ft_isascii(200) = %d (esperado 0)\n", ft_isascii(200));
 
+    // Probar ft_isprint
+    printf("ft_isprint('7') = %d (esperado 1)\n", ft_isprint('7'));
+    printf("ft_isprint('\n') = %d (esperado 0)\n", ft_isprint('\n'));
+
 
 
 }
