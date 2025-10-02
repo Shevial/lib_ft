@@ -3,6 +3,10 @@
 
 int main(void)
 {
+    char dest[10];
+
+    size_t longi;
+
     // Probar ft_isalnum
     printf("ft_isalnum('7') = %d (esperado 1)\n", ft_isalnum('7'));
     printf("ft_isalnum('@') = %d (esperado 0)\n", ft_isalnum('@'));
@@ -32,6 +36,19 @@ int main(void)
     printf("ft_strlen(\"Celta\") = %zu (esperado 5)\n", ft_strlen("Celta"));
     printf("ft_strlen(\"42\") = %zu (esperado 2)\n", ft_strlen("42"));
     printf("ft_strlen("") = %zu (esperado 0)\n", ft_strlen(""));
+
+    //Probar ft_strlcpy
+    longi = ft_strlcpy(dest, "42", sizeof(dest));
+    printf("ft_strlcpy(dest, \"42\") -> dest = \"%s\", returned = %zu (esperado dest = \"42\", returned = 2)\n", dest, longi);
+
+    longi = ft_strlcpy(dest, "HolaCeltii", sizeof(dest));
+    printf("ft_strlcpy(dest, \"HolaCeltii\") -> dest = \"%s\", returned = %zu (esperado dest = \"HolaCelti\", returned = 10)\n", dest, longi);
+
+    longi = ft_strlcpy(dest, "Sara", 0);
+    printf("ft_strlcpy(dest, \"Sara\", 0) -> dest = \"%s\", returned = %zu (esperado dest = \"\", returned = 4)\n", dest, longi);
+
+    longi = ft_strlcpy(dest, "", sizeof(dest));
+    printf("ft_strlcpy(dest, \"\") -> dest = \"%s\", returned = %zu (esperado dest = \"\", returned = 0)\n", dest, longi);
 
 
     return 0;
