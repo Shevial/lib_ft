@@ -20,6 +20,11 @@ int main(void)
     printf("ft_isdigit('7') = %d (esperado 1)\n", ft_isdigit('7'));
     printf("ft_isdigit('a') = %d (esperado 0)\n", ft_isdigit('a'));
     printf("ft_isdigit('*') = %d (esperado 0)\n", ft_isdigit('*'));
+   
+    // Probar ft_isascii
+    printf("ft_isascii('7') = %d (esperado 1)\n", ft_isascii('7'));
+    printf("ft_isascii('a') = %d (esperado 1)\n", ft_isascii('a'));
+    printf("ft_isascii(200) = %d (esperado 0)\n", ft_isascii(200));
 
 
 
