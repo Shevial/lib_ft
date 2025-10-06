@@ -1,4 +1,5 @@
 #include <stddef.h>
+#include "libft.h"
 
 size_t ft_strlcpy(char *dst, const char *src, size_t dsize)
 {
@@ -8,13 +9,13 @@ size_t ft_strlcpy(char *dst, const char *src, size_t dsize)
     if (!dst || !src)
         return 0;
 
-    while (i < len && i + 1 < dstsize) //copia 
+    while (i < len && i + 1 < dsize) //copia 
     {
         dst[i] = src[i];
         i++;
     }
 
-    if (dstsize > 0)
+    if (dsize > 0)
         dst[i] = '\0';
 
     return len;
