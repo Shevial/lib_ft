@@ -74,11 +74,11 @@ int main(void)
 
 
     // Probar ft_strchr
-    char texto[] = "Hola Mundo";
+    char texto[] = "Hola Celta";
     char *ptr;
 
-    ptr = ft_strchr(texto, 'M');
-    printf("ft_strchr(texto, 'M') -> %s (esperado: 'Mundo')\n", ptr);
+    ptr = ft_strchr(texto, 'C');
+    printf("ft_strchr(texto, 'C') -> %s (esperado: 'Celta')\n", ptr);
 
     ptr = ft_strchr(texto, 'z');
     printf("ft_strchr(texto, 'z') -> %p (esperado: NULL)\n", (void *)ptr);
