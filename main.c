@@ -51,6 +51,27 @@ int main(void)
     printf("ft_strlcpy(dest, \"\") -> dest = \"%s\", returned = %zu (esperado dest = \"\", returned = 0)\n", dest, longi);
 
 
+    // Probar ft_strlcat
+    char dest1[20] = "Hola";
+    longi = ft_strlcat(dest1, " Mundo", sizeof(dest1));
+    printf("ft_strlcat(dest1, \" Mundo\", 20) -> dest = \"%s\", returned = %zu (esperado dest = \"Hola Mundo\", returned = 11), concatenación normal (sobra espacio)\n", dest1, longi);
+
+    char dest2[10] = "Hola";
+    longi = ft_strlcat(dest2, " Celti", sizeof(dest2));
+    printf("ft_strlcat(dest2, \" Celti\", 10) -> dest = \"%s\", returned = %zu (esperado dest = \"Hola Celt\", returned = 10), truncamiento al límite exacto\n", dest2, longi);
+
+    char dest3[5] = "Hola";
+    longi = ft_strlcat(dest3, " Mundo", sizeof(dest3));
+    printf("ft_strlcat(dest3, \" Mundo\", 5) -> dest = \"%s\", returned = %zu (esperado dest = \"Hola\", returned = 11), dstsize demasiado pequeño → no concatena\n", dest3, longi);
+
+    char dest4[10] = "";
+    longi = ft_strlcat(dest4, "42", sizeof(dest4));
+    printf("ft_strlcat(dest4, \"42\", 10) -> dest = \"%s\", returned = %zu (esperado dest = \"42\", returned = 2), dest vacío\n", dest4, longi);
+
+    char dest5[10] = "Sara";
+    longi = ft_strlcat(dest5, "", sizeof(dest5));
+    printf("ft_strlcat(dest5, \"\", 10) -> dest = \"%s\", returned = %zu (esperado dest = \"Sara\", returned = 4), src vacío \n", dest5, longi);
+
     return 0;
 
 }
