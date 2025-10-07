@@ -72,6 +72,20 @@ int main(void)
     longi = ft_strlcat(dest5, "", sizeof(dest5));
     printf("ft_strlcat(dest5, \"\", 10) -> dest = \"%s\", returned = %zu (esperado dest = \"Sara\", returned = 4), src vacío \n", dest5, longi);
 
+
+    // Probar ft_strchr
+    char texto[] = "Hola Mundo";
+    char *ptr;
+
+    ptr = ft_strchr(texto, 'M');
+    printf("ft_strchr(texto, 'M') -> %s (esperado: 'Mundo')\n", ptr);
+
+    ptr = ft_strchr(texto, 'z');
+    printf("ft_strchr(texto, 'z') -> %p (esperado: NULL)\n", (void *)ptr);
+
+    ptr = ft_strchr(texto, '\0');
+    printf("ft_strchr(texto, '\\0') -> apunta al final: '%s'\n", ptr);
+
     return 0;
 
 }
