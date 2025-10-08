@@ -86,6 +86,23 @@ int main(void)
     ptr = ft_strchr(texto, '\0');
     printf("ft_strchr(texto, '\\0') -> apunta al final: '%s'\n", ptr);
 
+
+    // Probar ft_strrchr
+    char text[] = "banana";
+    char *ptr2;
+
+    ptr2 = ft_strrchr(text, 'a');
+    printf("ft_strrchr con una letra que aparece varias veces(\"banana\", 'a') -> \"%s\" (esperado \"a\")\n", ptr2);
+
+    ptr2 = ft_strrchr(text, 'z');
+    printf("ft_strrchr con una letra que no aparece(\"banana\", 'z') -> %s (esperado NULL)\n", ptr2 == NULL ? "NULL" : ptr2);
+
+    ptr2 = ft_strrchr(text, 'b');
+    printf("ft_strrchr con la primera letra(\"banana\", 'b') -> \"%s\" (esperado \"banana\")\n", ptr2);
+
+    ptr2 = ft_strrchr(text, '\0');
+    printf("ft_strrchr con el terminador nulo(\"banana\", '\\0') -> \"%s\" (esperado \"\")\n", ptr2);
+
     return 0;
 
 }
