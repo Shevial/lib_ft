@@ -103,7 +103,24 @@ int main(void)
     ptr2 = ft_strrchr(text, '\0');
     printf("ft_strrchr con el terminador nulo(\"banana\", '\\0') -> \"%s\" (esperado \"\")\n", ptr2);
 
-    return 0;
+
+    // Probar ft_strncmp
+    int r;
+
+    r = ft_strncmp("Hola", "Holanda", 4);
+    printf("ft_strncmp(\"Hola\", \"Holanda\", 4) = %d (0)\n", r);
+
+    r = ft_strncmp("Hola", "Holanda", 7);
+    printf("ft_strncmp(\"Hola\", \"Holanda\", 7) = %d (<0)\n", r);
+
+    r = ft_strncmp("abc", "abd", 3);
+    printf("ft_strncmp(\"abc\", \"abd\", 3) = %d (<0)\n", r);
+
+    r = ft_strncmp("Hola", "Holanda", 0);
+    printf("ft_strncmp(\"Hola\", \"Holanda\", 0) = %d (0)\n", r);
+
+   return 0;
+
 
 }
 
