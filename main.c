@@ -119,6 +119,40 @@ int main(void)
     r = ft_strncmp("Hola", "Holanda", 0);
     printf("ft_strncmp(\"Hola\", \"Holanda\", 0) = %d (0)\n", r);
 
+
+    //Probar strnstr
+    char frase[] = "Hola mundo cruel";
+    char *p;
+
+    p = ft_strnstr(frase, "mundo", 15);
+    printf("Buscar 'mundo' (len 15) en '%s' -> %s\n", frase, p ? p : "NULL");
+
+    p = ft_strnstr(frase, "cruel", 10);
+    printf("Buscar 'cruel' (len 10) en '%s' -> %s\n", frase, p ? p : "NULL");
+
+    p = ft_strnstr(frase, "", 10);
+    printf("Buscar '' (vacío) (len 10) en '%s' -> %s\n", frase, p ? p : "NULL");
+
+    p = ft_strnstr(frase, "Hola", 2);
+    printf("Buscar 'Hola' (len 2) en '%s' -> %s\n", frase, p ? p : "NULL");
+
+    p = ft_strnstr("abcdef", "def", 6);
+    printf("Buscar 'def' (len 6) en 'abcdef' -> %s\n", p ? p : "NULL");
+
+
+
+    //Tolower y toupper
+    char c1 = 'C';
+    char c2 = 'e';
+    char c3 = '7';
+
+    printf("Antes tolower: '%c' -> Después: '%c'\n", c1, ft_tolower(c1));
+    printf("Antes tolower: '%c' -> Después: '%c'\n", c2, ft_tolower(c2));
+    printf("Antes tolower: '%c' -> Después: '%c'\n", c3, ft_tolower(c3));
+
+    printf("Antes toupper: '%c' -> Después: '%c'\n", c1, ft_toupper(c1));
+    printf("Antes toupper: '%c' -> Después: '%c'\n", c2, ft_toupper(c2));
+    printf("Antes toupper: '%c' -> Después: '%c'\n", c3, ft_toupper(c3));
    return 0;
 
 
