@@ -153,8 +153,27 @@ int main(void)
     printf("Antes toupper: '%c' -> Después: '%c'\n", c1, ft_toupper(c1));
     printf("Antes toupper: '%c' -> Después: '%c'\n", c2, ft_toupper(c2));
     printf("Antes toupper: '%c' -> Después: '%c'\n", c3, ft_toupper(c3));
-   return 0;
 
+   //Atoiiiii
 
+    const char *atoitest;
+
+    atoitest = "23456789";
+
+    printf("Antes de atoi: \"%s\" Después: %d\n", atoitest, ft_atoi(atoitest));
+    
+    atoitest = "-3456789";
+
+    printf("Antes de atoi: \"%s\" Después: %d\n", atoitest, ft_atoi(atoitest));
+
+    atoitest = "-+++++++++-------3456789";
+
+    printf("Antes de atoi: \"%s\" Después: %d\n", atoitest, ft_atoi(atoitest));
+
+    atoitest = "                         +-+-+3456789";
+
+    printf("Antes de atoi: \"%s\" Después: %d\n", atoitest, ft_atoi(atoitest));
+
+    return 0;
 }
 
