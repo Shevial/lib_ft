@@ -26,4 +26,9 @@ int	ft_tolower(int c);
 
 int ft_atoi(const char *str);
 
+void *ft_memset(void *s, int c, size_t n);
+void *ft_memcpy(void *dest, const void *src, size_t count);
+
+
+
 #endif

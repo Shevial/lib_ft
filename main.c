@@ -174,6 +174,29 @@ int main(void)
 
     printf("Antes de atoi: \"%s\" Después: %d\n", atoitest, ft_atoi(atoitest));
 
+    //Memset
+
+    char buffer[] = "Hola celta";
+    char c = 'c';
+    size_t n = 15;
+
+    char *result = ft_memset(buffer, c, n);
+
+    printf("%s", result);
+    
+    //Memcpy
+
+    char src[] = "Hola celta";
+    char destmemcpy[] = "CELCELCEL";
+    size_t tamanio = 10;
+
+    printf("La cadena origen es %s", src);
+    printf("La cadena destino es %s", destmemcpy);
+
+    void *resultcpy = ft_memcpy(src, destmemcpy, tamanio);
+
+    printf("La cadena resultante es %s", result);
+
     return 0;
 }
 
