@@ -1,5 +1,17 @@
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sahevia- <sahevia-@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/21 19:26:47 by sahevia-          #+#    #+#             */
+/*   Updated: 2025/10/21 19:26:50 by sahevia-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+#include <stddef.h>
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -11,7 +23,6 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if ((char)c == '\0')
 		return ((char *)s);
-    //Aqui¿?¿? s++
+	// Aqui¿?¿? s++
 	return (NULL);
 }
-
