@@ -182,7 +182,7 @@ int main(void)
 
     char *result = ft_memset(buffer, c, n);
 
-    printf("%s", result);
+    printf("%s\n", result);
     
     //Memcpy
 
@@ -190,12 +190,12 @@ int main(void)
     char destmemcpy[] = "CELCELCEL";
     size_t tamanio = 10;
 
-    printf("La cadena origen es %s", src);
-    printf("La cadena destino es %s", destmemcpy);
+    printf("La cadena origen es %s\n", src);
+    printf("La cadena destino es %s \n", destmemcpy);
 
     void *resultcpy = ft_memcpy(src, destmemcpy, tamanio);
 
-    printf("La cadena resultante es %s", result);
+    printf("La cadena resultante es %s\n", result);
 
     return 0;
 }
