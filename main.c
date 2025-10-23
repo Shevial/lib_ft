@@ -34,142 +34,206 @@ int	main(void)
 	size_t		tamanio2;
 	char		*resultcpy2;
 
-	// Probar ft_isalnum
+	printf("\n========== PRUEBAS LIBFT ==========\n\n");
+
+	// ISALNUM
+	printf("ft_isalnum:\n");
 	printf("ft_isalnum('7') = %d (esperado 1)\n", ft_isalnum('7'));
 	printf("ft_isalnum('@') = %d (esperado 0)\n", ft_isalnum('@'));
 	printf("ft_isalnum('_') = %d (esperado 0)\n", ft_isalnum('_'));
-	printf("ft_isalnum('a') = %d (esperado 1)\n", ft_isalnum('a'));
-	// Probar ft_isalpha
+	printf("ft_isalnum('a') = %d (esperado 1)\n\n", ft_isalnum('a'));
+
+	// ISALPHA
+	printf("ft_isalpha:\n");
 	printf("ft_isalpha('7') = %d (esperado 0)\n", ft_isalpha('7'));
 	printf("ft_isalpha('a') = %d (esperado 1)\n", ft_isalpha('a'));
-	printf("ft_isalpha('&') = %d (esperado 0)\n", ft_isalpha('&'));
-	// Probar ft_isdigit
+	printf("ft_isalpha('&') = %d (esperado 0)\n\n", ft_isalpha('&'));
+
+	// ISDIGIT
+	printf("ft_isdigit:\n");
 	printf("ft_isdigit('7') = %d (esperado 1)\n", ft_isdigit('7'));
 	printf("ft_isdigit('a') = %d (esperado 0)\n", ft_isdigit('a'));
-	printf("ft_isdigit('*') = %d (esperado 0)\n", ft_isdigit('*'));
-	// Probar ft_isascii
+	printf("ft_isdigit('*') = %d (esperado 0)\n\n", ft_isdigit('*'));
+
+	// ISASCII
+	printf("ft_isascii:\n");
 	printf("ft_isascii('7') = %d (esperado 1)\n", ft_isascii('7'));
 	printf("ft_isascii('a') = %d (esperado 1)\n", ft_isascii('a'));
-	printf("ft_isascii(200) = %d (esperado 0)\n", ft_isascii(200));
-	// Probar ft_isprint
+	printf("ft_isascii(200) = %d (esperado 0)\n\n", ft_isascii(200));
+
+	// ISPRINT
+	printf("ft_isprint:\n");
 	printf("ft_isprint('7') = %d (esperado 1)\n", ft_isprint('7'));
-	printf("ft_isprint('\\n') = %d (esperado 0)\n", ft_isprint('\n'));
-	// Probar ft_strlen
+	printf("ft_isprint('\\n') = %d (esperado 0)\n\n", ft_isprint('\n'));
+
+	// STRLEN
+	printf("ft_strlen:\n");
 	printf("ft_strlen(\"Celta\") = %zu (esperado 5)\n", ft_strlen("Celta"));
 	printf("ft_strlen(\"42\") = %zu (esperado 2)\n", ft_strlen("42"));
-	printf("ft_strlen("
-			") = %zu (esperado 0)\n",
-			ft_strlen(""));
-	// Probar ft_strlcpy
+	printf("ft_strlen(\"\") = %zu (esperado 0)\n\n", ft_strlen(""));
+
+	// STRLCPY
+	printf("ft_strlcpy:\n");
 	longi = ft_strlcpy(dest, "42", sizeof(dest));
-	printf("ft_strlcpy(dest, \"42\") -> dest = \"%s\", returned =
-		%zu (esperado dest = \"42\", returned = 2)\n", dest, longi);
+	printf("dest = \"%s\", returned = %zu (esperado dest=\"42\", ret=2)\n", dest, longi);
 	longi = ft_strlcpy(dest, "HolaCeltii", sizeof(dest));
-	printf("ft_strlcpy(dest, \"HolaCeltii\") -> dest = \"%s\", returned =
-		%zu (esperado dest = \"HolaCelti\", returned = 10)\n", dest, longi);
+	printf("dest = \"%s\", returned = %zu (esperado dest=\"HolaCelti\", ret=10)\n", dest, longi);
 	longi = ft_strlcpy(dest, "Sara", 0);
-	printf("ft_strlcpy(dest, \"Sara\", 0) -> dest = \"%s\", returned =
-		%zu (esperado dest = \"\", returned = 4)\n", dest, longi);
+	printf("dest = \"%s\", returned = %zu (esperado dest=\"\", ret=4)\n", dest, longi);
 	longi = ft_strlcpy(dest, "", sizeof(dest));
-	printf("ft_strlcpy(dest, \"\") -> dest = \"%s\", returned =
-		%zu (esperado dest = \"\", returned = 0)\n", dest, longi);
-	// Probar ft_strlcat
+	printf("dest = \"%s\", returned = %zu (esperado dest=\"\", ret=0)\n\n", dest, longi);
+
+	// STRLCAT
+	printf("ft_strlcat:\n");
 	longi = ft_strlcat(dest1, " Mundo", sizeof(dest1));
-	printf("ft_strlcat(dest1, \" Mundo\", 20) -> dest = \"%s\", returned =
-		%zu (esperado dest = \"Hola Mundo\", returned = 11),
-		concatenación normal (sobra espacio)\n", dest1, longi);
+	printf("dest1 = \"%s\", returned = %zu (esperado ret=11)\n", dest1, longi);
 	longi = ft_strlcat(dest2, " Celti", sizeof(dest2));
-	printf("ft_strlcat(dest2, \" Celti\", 10) -> dest = \"%s\", returned =
-		%zu (esperado dest = \"Hola Celt\", returned = 10),
-		truncamiento al límite exacto\n", dest2, longi);
+	printf("dest2 = \"%s\", returned = %zu (esperado ret=10)\n", dest2, longi);
 	longi = ft_strlcat(dest3, " Mundo", sizeof(dest3));
-	printf("ft_strlcat(dest3, \" Mundo\", 5) -> dest = \"%s\", returned =
-		%zu (esperado dest = \"Hola\", returned = 11),
-		dstsize demasiado pequeño → no concatena\n", dest3, longi);
+	printf("dest3 = \"%s\", returned = %zu (esperado ret=11)\n", dest3, longi);
 	longi = ft_strlcat(dest4, "42", sizeof(dest4));
-	printf("ft_strlcat(dest4, \"42\", 10) -> dest = \"%s\", returned =
-		%zu (esperado dest = \"42\", returned = 2), dest vacío\n", dest4,
-		longi);
+	printf("dest4 = \"%s\", returned = %zu (esperado ret=2)\n", dest4, longi);
 	longi = ft_strlcat(dest5, "", sizeof(dest5));
-	printf("ft_strlcat(dest5, \"\", 10) -> dest = \"%s\", returned =
-		%zu (esperado dest = \"Sara\", returned = 4), src vacío \n", dest5,
-		longi);
-	// Probar ft_strchr
+	printf("dest5 = \"%s\", returned = %zu (esperado ret=4)\n\n", dest5, longi);
+
+	// STRCHR
+	printf("ft_strchr:\n");
 	ptr = ft_strchr(texto, 'C');
-	printf("ft_strchr(texto, 'C') -> %s (esperado: 'Celta')\n", ptr);
+	printf("Buscando 'C' -> %s\n", ptr);
 	ptr = ft_strchr(texto, 'z');
-	printf("ft_strchr(texto, 'z') -> %p (esperado: NULL)\n", (void *)ptr);
+	printf("Buscando 'z' -> %p (NULL esperado)\n", (void *)ptr);
 	ptr = ft_strchr(texto, '\0');
-	printf("ft_strchr(texto, '\\0') -> apunta al final: '%s'\n", ptr);
-	// Probar ft_strrchr
+	printf("Buscando terminador -> apunta a: '%s'\n\n", ptr);
+
+	// STRRCHR
+	printf("ft_strrchr:\n");
 	ptr2 = ft_strrchr(text, 'a');
-	printf("ft_strrchr con una letra que aparece varias veces(\"banana\", 'a')
-		-> \"%s\" (esperado \"a\")\n", ptr2);
+	printf("Última 'a' -> %s\n", ptr2);
 	ptr2 = ft_strrchr(text, 'z');
-	printf("ft_strrchr con una letra que no aparece(\"banana\", 'z') ->
-		%s (esperado NULL)\n", ptr2 == NULL ? "NULL" : ptr2);
+	printf("Letra no existente -> %s\n", ptr2 == NULL ? "NULL" : ptr2);
 	ptr2 = ft_strrchr(text, 'b');
-	printf("ft_strrchr con la primera letra(\"banana\", 'b')
-		-> \"%s\" (esperado \"banana\")\n", ptr2);
+	printf("Primera letra -> %s\n", ptr2);
 	ptr2 = ft_strrchr(text, '\0');
-	printf("ft_strrchr con el terminador nulo(\"banana\", '\\0')
-		-> \"%s\" (esperado \"\")\n", ptr2);
-	// Probar ft_strncmp
+	printf("Terminador -> %s\n\n", ptr2);
+
+	// STRNCMP
+	printf("ft_strncmp:\n");
 	r = ft_strncmp("Hola", "Holanda", 4);
-	printf("ft_strncmp(\"Hola\", \"Holanda\", 4) = %d (0)\n", r);
+	printf("Comparando hasta 4 -> %d (0)\n", r);
 	r = ft_strncmp("Hola", "Holanda", 7);
-	printf("ft_strncmp(\"Hola\", \"Holanda\", 7) = %d (<0)\n", r);
+	printf("Comparando hasta 7 -> %d (<0)\n", r);
 	r = ft_strncmp("abc", "abd", 3);
-	printf("ft_strncmp(\"abc\", \"abd\", 3) = %d (<0)\n", r);
+	printf("Comparando hasta 3 -> %d (<0)\n", r);
 	r = ft_strncmp("Hola", "Holanda", 0);
-	printf("ft_strncmp(\"Hola\", \"Holanda\", 0) = %d (0)\n", r);
-	// Probar strnstr
+	printf("Comparando hasta 0 -> %d (0)\n\n", r);
+
+	// STRNSTR
+	printf("ft_strnstr:\n");
 	p = ft_strnstr(frase, "mundo", 15);
-	printf("Buscar 'mundo' (len 15) en '%s' -> %s\n", frase, p ? p : "NULL");
+	printf("Buscar 'mundo' -> %s\n", p ? p : "NULL");
 	p = ft_strnstr(frase, "cruel", 10);
-	printf("Buscar 'cruel' (len 10) en '%s' -> %s\n", frase, p ? p : "NULL");
+	printf("Buscar 'cruel' -> %s\n", p ? p : "NULL");
 	p = ft_strnstr(frase, "", 10);
-	printf("Buscar '' (vacío) (len 10) en '%s' -> %s\n", frase, p ? p : "NULL");
+	printf("Buscar '' (vacío) -> %s\n", p ? p : "NULL");
 	p = ft_strnstr(frase, "Hola", 2);
-	printf("Buscar 'Hola' (len 2) en '%s' -> %s\n", frase, p ? p : "NULL");
+	printf("Buscar 'Hola' (len2) -> %s\n", p ? p : "NULL");
 	p = ft_strnstr("abcdef", "def", 6);
-	printf("Buscar 'def' (len 6) en 'abcdef' -> %s\n", p ? p : "NULL");
-	// Tolower y toupper
-	c1 = 'C';
-	c2 = 'e';
-	c3 = '7';
-	printf("Antes tolower: '%c' -> Después: '%c'\n", c1, ft_tolower(c1));
-	printf("Antes tolower: '%c' -> Después: '%c'\n", c2, ft_tolower(c2));
-	printf("Antes tolower: '%c' -> Después: '%c'\n", c3, ft_tolower(c3));
-	printf("Antes toupper: '%c' -> Después: '%c'\n", c1, ft_toupper(c1));
-	printf("Antes toupper: '%c' -> Después: '%c'\n", c2, ft_toupper(c2));
-	printf("Antes toupper: '%c' -> Después: '%c'\n", c3, ft_toupper(c3));
-	// Atoiiiii
+	printf("Buscar 'def' -> %s\n\n", p ? p : "NULL");
+
+	// TOLOWER / TOUPPER
+	printf("tolower / toupper:\n");
+	c1 = 'C'; c2 = 'e'; c3 = '7';
+	printf("tolower: '%c'->'%c', '%c'->'%c', '%c'->'%c'\n",
+		c1, ft_tolower(c1), c2, ft_tolower(c2), c3, ft_tolower(c3));
+	printf("toupper: '%c'->'%c', '%c'->'%c', '%c'->'%c'\n\n",
+		c1, ft_toupper(c1), c2, ft_toupper(c2), c3, ft_toupper(c3));
+
+	// ATOI
+	printf("ft_atoi:\n");
 	atoitest = "23456789";
-	printf("Antes de atoi: \"%s\" Después: %d\n", atoitest, ft_atoi(atoitest));
+	printf("\"%s\" -> %d\n", atoitest, ft_atoi(atoitest));
 	atoitest = "-3456789";
-	printf("Antes de atoi: \"%s\" Después: %d\n", atoitest, ft_atoi(atoitest));
+	printf("\"%s\" -> %d\n", atoitest, ft_atoi(atoitest));
 	atoitest = "-+++++++++-------3456789";
-	printf("Antes de atoi: \"%s\" Después: %d\n", atoitest, ft_atoi(atoitest));
-	atoitest = "                         +-+-+3456789";
-	printf("Antes de atoi: \"%s\" Después: %d\n", atoitest, ft_atoi(atoitest));
-	// Memset
+	printf("\"%s\" -> %d\n", atoitest, ft_atoi(atoitest));
+	atoitest = "         +-+-+3456789";
+	printf("\"%s\" -> %d\n\n", atoitest, ft_atoi(atoitest));
+
+	// MEMSET
+	printf("ft_memset:\n");
 	c = 'c';
 	n = 15;
 	result = ft_memset(buffer, c, n);
-	printf("%s\n", result);
-	// Memcpy
+	printf("%s\n\n", result);
+
+	// MEMCPY
+	printf("ft_memcpy:\n");
 	tamanio = 15;
-	printf("Prueba con espacio suficiente\n");
-	printf("La cadena origen es: %s\n", src);
-	printf("La cadena destino es: %s \n", destmemcpy);
+	printf("Origen: %s\nDestino: %s\n", src, destmemcpy);
 	resultcpy = ft_memcpy(destmemcpy, src, tamanio);
-	printf("La cadena resultante es: %s\n", resultcpy);
-	printf("Prueba sin espacio suficiente\n");
+	printf("Resultado: %s\n\n", resultcpy);
 	tamanio2 = 4;
-	printf("La cadena origen es: %s\n", src2);
-	printf("La cadena destino es: %s \n", destmemcpy2);
+	printf("Origen: %s\nDestino: %s\n", src2, destmemcpy2);
 	resultcpy2 = ft_memcpy(destmemcpy2, src2, tamanio2);
-	printf("La cadena resultante es: %s\n", resultcpy2);
+	printf("Resultado: %s\n\n", resultcpy2);
+
+	// MEMMOVE
+	printf("ft_memmove:\n");
+	char	str1[] = "HolaMundo";
+	char	str2[] = "HolaMundo";
+	char	str3[] = "1234567890";
+	char	deest1[20] = "ABCDEFGHIJ";
+	char	deest2[20] = "ABCDEFGHIJ";
+
+	printf("Caso 1: sin solapamiento\nAntes: %s\n", deest1);
+	ft_memmove(deest1, str1, 5);
+	printf("Después: %s\n\n", deest1);
+
+	printf("Caso 2: solapamiento hacia adelante\nAntes: %s\n", str1);
+	ft_memmove(str1 + 3, str1 + 5, 5);
+	printf("Después: %s\n\n", str1);
+
+	printf("Caso 3: solapamiento hacia atrás\nAntes: %s\n", str2);
+	ft_memmove(str2 + 5, str2 + 3, 5);
+	printf("Después: %s\n\n", str2);
+
+	printf("Caso 4: destino = origen\nAntes: %s\n", str3);
+	ft_memmove(str3, str3, 10);
+	printf("Después: %s\n\n", str3);
+
+	// MEMCHR
+	printf("ft_memchr:\n");
+	char	mem1[] = "HolaCelta";
+	char	mem2[] = "HolaCelti";
+	char	*ptrmem;
+	int		resultmemcmp;
+
+	ptrmem = ft_memchr(mem1, 'C', 9);
+	printf("ft_memchr -> 'C' en \"%s\": %s\n", mem1, ptrmem);
+	ptrmem = ft_memchr(mem1, 'z', 9);
+	printf("ft_memchr -> 'z' en \"%s\": %p (NULL esperado)\n\n", mem1, (void *)ptrmem);
+
+	//MEMCMP
+
+	printf("ft_memcmp:\n");
+	resultmemcmp = ft_memcmp(mem1, mem2, 9);
+	printf("ft_memcmp(\"%s\", \"%s\", 9) = %d (esperado negativo)\n", mem1, mem2, resultmemcmp);
+	resultmemcmp = ft_memcmp(mem1, "HolaCelta", 9);
+	printf("ft_memcmp(\"%s\", \"HolaCelta\", 9) = %d (esperado 0)\n", mem1, resultmemcmp);
+	resultmemcmp = ft_memcmp(mem1, "HolaCelta!", 10);
+	printf("ft_memcmp(\"%s\", \"HolaCelta!\", 10) = %d (esperado negativo)\n\n", mem1, resultmemcmp);
+
+
+		//BZERO
+	printf("ft_bzero:\n");
+	char buf[10] = "HolaCelta";
+    printf("Antes de ft_bzero: \"%s\"\n", buf);
+    ft_bzero(buf, 5);
+    printf("Después de ft_bzero: ");
+    for (int i = 0; i < 10; i++)
+    printf("%02X ", (unsigned char)buf[i]);
+    printf("\n");
+	
+	printf("========== FIN DE TESTS ==========\n");
 	return (0);
 }
