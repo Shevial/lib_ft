@@ -1,5 +1,6 @@
 #include "libft.h"
 #include <stdio.h>
+#include <stdlib.h> 
 
 int	main(void)
 {
@@ -224,7 +225,7 @@ int	main(void)
 	printf("ft_memcmp(\"%s\", \"HolaCelta!\", 10) = %d (esperado negativo)\n\n", mem1, resultmemcmp);
 
 
-		//BZERO
+	//BZERO
 	printf("ft_bzero:\n");
 	char buf[10] = "HolaCelta";
     printf("Antes de ft_bzero: \"%s\"\n", buf);
@@ -233,7 +234,30 @@ int	main(void)
     for (int i = 0; i < 10; i++)
     printf("%02X ", (unsigned char)buf[i]);
     printf("\n");
+	printf("\n");
 	
+//STRDUP
+	char	*original = "Hola Celta";
+	char	*copia;
+
+	printf("ft_strdup:\n");
+	printf("Original: %s\n", original);
+	copia = ft_strdup(original);
+	if (!copia)
+	{
+		printf("Error: malloc falló\n");
+		return (1);
+	}
+	printf("Duplicado: %s\n", copia);
+	
+	copia[0] = 'Z';
+	printf("Después de modificar copia:\n");
+	printf("Original: %s\n", original);
+	printf("Copia: %s\n", copia);
+	printf("\n");
+
+	free(copia);
+
 	printf("========== FIN DE TESTS ==========\n");
 	return (0);
 }
