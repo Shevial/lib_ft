@@ -276,9 +276,30 @@ int	main(void)
 	printf("\n");
 
 	free(arr);
-	printf("=== Fin de test ===\n");
 	printf("\n");
-	return (0);
+
+
+	char const	*textosub = "HolaCelta";
+	char		*sub;
+	printf("=== Test ft_substr ===\n");
+
+	printf("Cadena original: \"%s\"\n", textosub);
+
+	sub = ft_substr(textosub, 0, 4);
+	printf("Substring desde 0, len 4 -> \"%s\"\n", sub);
+	free(sub);
+
+	sub = ft_substr(textosub, 2, 4);
+	printf("Substring desde 2, len 4 -> \"%s\"\n", sub);
+	free(sub);
+
+	sub = ft_substr(textosub, 5, 20);
+	printf("Substring desde 5, len 20 -> \"%s\"\n", sub);
+	free(sub);
+
+	sub = ft_substr(textosub, 20, 5);
+	printf("Substring desde 20 (fuera del rango) -> \"%s\"\n", sub);
+	free(sub);
 
 
 	printf("========== FIN DE TESTS ==========\n");
