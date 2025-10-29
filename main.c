@@ -258,6 +258,29 @@ int	main(void)
 
 	free(copia);
 
+
+	int	*arr;
+	size_t	i;
+
+	printf("=== Test ft_calloc ===\n");
+	arr = (int *)ft_calloc(5, sizeof(int));
+	if (!arr)
+	{
+		printf("Error: malloc falló\n");
+		return (1);
+	}
+
+	printf("Contenido inicial (debe ser todo 0): ");
+	for (i = 0; i < 5; i++)
+		printf("%d ", arr[i]);
+	printf("\n");
+
+	free(arr);
+	printf("=== Fin de test ===\n");
+	printf("\n");
+	return (0);
+
+
 	printf("========== FIN DE TESTS ==========\n");
 	return (0);
 }
