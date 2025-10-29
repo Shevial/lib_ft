@@ -300,7 +300,26 @@ int	main(void)
 	sub = ft_substr(textosub, 20, 5);
 	printf("Substring desde 20 (fuera del rango) -> \"%s\"\n", sub);
 	free(sub);
+	printf("\n");
 
+
+	printf("=== ft_strjoin ===\n");
+	char	*s1join = "Hola ";
+	char	*s2join = "Celta";
+	char	*resultado;
+
+	printf("s1 = \"%s\"\n", s1join);
+	printf("s2 = \"%s\"\n", s2join);
+
+	resultado = ft_strjoin(s1join, s2join);
+	if (resultado)
+	{
+		printf("Resultado: \"%s\"\n", resultado);
+		free(resultado);
+	}
+	else
+		printf("Error: malloc falló.\n");
+	printf("\n");
 
 	printf("========== FIN DE TESTS ==========\n");
 	return (0);
