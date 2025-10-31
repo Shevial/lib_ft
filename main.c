@@ -309,7 +309,7 @@ int	main(void)
 	printf("\n");
 
 
-	char const	*textosub = "HolaCelta";
+	char const	*textosub = "HolaCeltaLau";
 	char		*sub;
 	printf("=== Test ft_substr ===\n");
 
