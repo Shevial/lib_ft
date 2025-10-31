@@ -2,6 +2,18 @@
 #include <stdio.h>
 #include <stdlib.h> 
 
+
+void	ft_printchariteri(unsigned int i, char *c)
+{
+	printf("%u: %c\n", i, *c);
+}
+char	to_upper_even(unsigned int i, char c)
+{
+	if (i % 2 == 0 && c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
+}
+
 int	main(void)
 {
 	char		dest[10];
@@ -184,7 +196,7 @@ int	main(void)
 	char	str2[] = "HolaMundo";
 	char	str3[] = "1234567890";
 	char	deest1[20] = "ABCDEFGHIJ";
-	char	deest2[20] = "ABCDEFGHIJ";
+	//char	deest2[20] = "ABCDEFGHIJ";
 
 	printf("Caso 1: sin solapamiento\nAntes: %s\n", deest1);
 	ft_memmove(deest1, str1, 5);
@@ -321,6 +333,128 @@ int	main(void)
 		printf("Error: malloc falló.\n");
 	printf("\n");
 
+	printf("=== ft_strtrim===\n");
+	const char *stringtrim = "aaaaa ' ' -hola celta-aaa 'a'";
+	const char *trimer = "a '\t";
+
+	char *trimeado = ft_strtrim(stringtrim, trimer);
+
+	printf("La cadena original es: %s\n", stringtrim);
+	printf("Lo que va a eliminar es: %s\n", trimer);
+	printf("La cadena recortada es: %s\n", trimeado);
+
+	printf("\n");
+
+	printf("=== ft_putchar_fd ===\n");
+    printf("Imprimiendo caracteres: ");
+	fflush(stdout); 
+    ft_putchar_fd('H', 1);
+    ft_putchar_fd('o', 1);
+    ft_putchar_fd('l', 1);
+    ft_putchar_fd('a', 1);
+    ft_putchar_fd('\n', 1);
+    printf("\n");
+
+
+    printf("=== ft_putstr_fd ===\n");
+    char *strputstr = "Hola Celta";
+    printf("Cadena original: %s\n", strputstr);
+    printf("Salida con ft_putstr_fd: ");
+	fflush(stdout); 
+    ft_putstr_fd(strputstr, 1);
+    ft_putchar_fd('\n', 1);
+    printf("\n");
+
+    printf("=== ft_putend_fd ===\n");
+    char *strputend = "Hola Mundo con ft_putend_fd";
+    printf("Salida con ft_putend_fd: ");
+	fflush(stdout);
+    ft_putend_fd(strputend, 1);
+    printf("\n");
+
+    printf("=== ft_putnbr_fd ===\n");
+    int numputnbr = 12345;
+    int numputnbr2 = -9876;
+    printf("Número %d con ft_putnbr_fd: ", numputnbr);
+	fflush(stdout);
+    ft_putnbr_fd(numputnbr, 1);
+    ft_putchar_fd('\n', 1);
+    printf("Número %d con ft_putnbr_fd: ", numputnbr2);
+	fflush(stdout);
+    ft_putnbr_fd(numputnbr2, 1);
+    ft_putchar_fd('\n', 1);
+    printf("\n");
+
+
+	printf("=== ft_itoa===\n");
+	
+	printf(" Con el numero más pequeño\n");
+	int numitoa = -2147483648;
+    char *stritoa = ft_itoa(numitoa);
+
+    if (stritoa == NULL)
+    printf("Error al convertir el número %ld a cadena.\n",(n));
+
+    printf("%s\n", stritoa);
+
+	printf(" Con un numero random\n");
+	int numitoa2 = 24645;
+    char *stritoa2 = ft_itoa(numitoa2);
+
+    if (stritoa2 == NULL)
+    printf("Error al convertir el número %ld a cadena.\n",(n));
+
+    printf("%s\n", stritoa2);
+    free(stritoa2);
+	
+	printf("\n");
+
+
+	char textoiteri[] = "hola celta";
+
+    printf("=== ft_striteri ===\n");
+    printf("Cadena original: %s\n", textoiteri);
+
+    ft_striteri(textoiteri, ft_printchariteri);
+
+    printf("Cadena después de ft_striteri: %s\n\n", textoiteri);
+
+
+	printf("=== ft_strmapi ===\n");
+
+	const char	*originmapi = "hola celta";
+	char		*resulmapi;
+
+	printf("Cadena original: %s\n", originmapi);
+
+	resulmapi = ft_strmapi(originmapi, to_upper_even);
+
+	if (resulmapi)
+	{
+		printf("Resultado: %s\n", resulmapi);
+		free(resulmapi);
+	}
+	else
+		printf("Error: malloc falló.\n");
+
+	printf("\n");
+
+	printf("=== ft_split ===\n");
+
+	const	char *stringsplit = "hola celta es mi perro";
+	char	csplit = ' '; 
+	int		isplit = 0; 
+
+	char	**resultadosplit = ft_split(stringsplit, c);
+
+	while(*resultadosplit[isplit] != '\0')
+	{
+		printf("%s", resultadosplit[isplit]);
+		free(resultadosplit[isplit]);
+		isplit++;
+	}
+	free(resultadosplit);
+	
 	printf("========== FIN DE TESTS ==========\n");
 	return (0);
 }
