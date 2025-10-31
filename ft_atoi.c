@@ -6,7 +6,7 @@
 /*   By: sahevia- <sahevia-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 19:24:40 by sahevia-          #+#    #+#             */
-/*   Updated: 2025/10/31 17:45:24 by sahevia-         ###   ########.fr       */
+/*   Updated: 2025/10/31 20:02:27 by sahevia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,3 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
-
-/*
-int	main(void)
-{
-	char	*str;
-
-	str = "42";
-	printf("%d", ft_atoi(str));
-	return (0);
-}
-*/

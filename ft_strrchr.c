@@ -6,7 +6,7 @@
 /*   By: sahevia- <sahevia-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 19:27:53 by sahevia-          #+#    #+#             */
-/*   Updated: 2025/10/21 19:28:39 by sahevia-         ###   ########.fr       */
+/*   Updated: 2025/10/31 20:01:27 by sahevia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (s[i] == (char)c)
 			last = (char *)&s[i];
-		// Guarda en last la posición exacta dentro de la cadena donde encontro el carácter.
 		i++;
 	}
 	if ((char)c == '\0')

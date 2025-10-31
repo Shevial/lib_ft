@@ -1,7 +1,18 @@
-#include "libft.h"
-#include <stdlib.h>
-#include <stdio.h> 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sahevia- <sahevia-@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/31 19:35:15 by sahevia-          #+#    #+#             */
+/*   Updated: 2025/10/31 20:51:04 by sahevia-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 static int	wordlen(const char *s, char c)
 {
@@ -34,7 +45,7 @@ static int	countwords(const char *s, char c)
 	return (count);
 }
 
-static void	*free_strs(char**strs)
+static void	*free_strs(char **strs)
 {
 	int	i;
 
@@ -49,8 +60,9 @@ char	**ft_split(char const *s, char c)
 {
 	char	**strs;
 	int		i;
-	int		count ;
+	int		count;
 
+	i = 0;
 	if (!s)
 		return (NULL);
 	count = countwords(s, c);
@@ -58,7 +70,6 @@ char	**ft_split(char const *s, char c)
 	if (!strs)
 		return (NULL);
 	strs[count + 1] = NULL;
-	i = 0;
 	while (*s)
 	{
 		if (*s != c)

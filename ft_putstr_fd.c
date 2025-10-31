@@ -6,7 +6,7 @@
 /*   By: sahevia- <sahevia-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 19:26:26 by sahevia-          #+#    #+#             */
-/*   Updated: 2025/10/21 19:26:56 by sahevia-         ###   ########.fr       */
+/*   Updated: 2025/10/31 19:49:57 by sahevia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,3 @@ void	ft_putstr_fd(char *s, int fd)
 		}
 	}
 }
-
-/*int main()
-{
-	ft_putstr_fd("Error: sara es un pivon", 2);
-	perror("Error: sara es un pivon");
-	dprintf(2, "Error: sara es un pivon");
-}*/

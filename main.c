@@ -14,6 +14,24 @@ char	to_upper_even(unsigned int i, char c)
 	return (c);
 }
 
+int	ft_digitcount(int n)
+{
+	int contador;
+	contador = 0;
+
+	if (n == 0)
+		return (1);
+
+	if (n < 0)
+		contador++;
+	while (n != 0)
+	{
+		n /= 10;
+		contador++;
+	}
+	return (contador);
+}
+
 int	main(void)
 {
 	char		dest[10];
