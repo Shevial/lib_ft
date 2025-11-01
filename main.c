@@ -383,11 +383,11 @@ int	main(void)
     ft_putchar_fd('\n', 1);
     printf("\n");
 
-    printf("=== ft_putend_fd ===\n");
-    char *strputend = "Hola Mundo con ft_putend_fd";
-    printf("Salida con ft_putend_fd: ");
+    printf("=== ft_putendl_fd ===\n");
+    char *strputend = "Hola Mundo con ft_putendl_fd";
+    printf("Salida con ft_putendl_fd: ");
 	fflush(stdout);
-    ft_putend_fd(strputend, 1);
+    ft_putendl_fd(strputend, 1);
     printf("\n");
 
     printf("=== ft_putnbr_fd ===\n");
@@ -460,12 +460,18 @@ int	main(void)
 	printf("=== ft_split ===\n");
 
 	const	char *stringsplit = "hola celta es mi perro";
-	char	csplit = ' '; 
 	int		isplit = 0; 
 
-	char	**resultadosplit = ft_split(stringsplit, c);
+	char	**resultadosplit = ft_split(stringsplit, ' ');
 
-	while(*resultadosplit[isplit] != '\0')
+
+	if (!resultadosplit)
+	{
+		printf("Error: ft_split devolvió NULL\n");
+		return (1);
+	}
+
+	while(resultadosplit[isplit])
 	{
 		printf("%s", resultadosplit[isplit]);
 		free(resultadosplit[isplit]);

@@ -6,7 +6,7 @@
 /*   By: sahevia- <sahevia-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 20:13:16 by sahevia-          #+#    #+#             */
-/*   Updated: 2025/10/31 20:47:17 by sahevia-         ###   ########.fr       */
+/*   Updated: 2025/11/01 12:31:17 by sahevia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		ft_digitcount(int n);
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
-void	ft_putend_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));

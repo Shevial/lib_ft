@@ -6,7 +6,7 @@
 /*   By: sahevia- <sahevia-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 19:35:15 by sahevia-          #+#    #+#             */
-/*   Updated: 2025/10/31 20:51:04 by sahevia-         ###   ########.fr       */
+/*   Updated: 2025/11/01 12:33:50 by sahevia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char	**ft_split(char const *s, char c)
 	strs = malloc(sizeof(char *) * (count + 1));
 	if (!strs)
 		return (NULL);
-	strs[count + 1] = NULL;
+	strs[count] = NULL;
 	while (*s)
 	{
 		if (*s != c)
