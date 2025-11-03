@@ -50,8 +50,8 @@ SRC = ft_atoi.c \
 		ft_split.c
 
 OBJS = ${SRC:.c=.o}
-CC = cc
-CCFLAGS = -Wall -Wextra -Werror 
+CC = gcc
+CCFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 RM = rm -f 
 
 .c.o:

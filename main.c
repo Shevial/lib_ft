@@ -473,12 +473,12 @@ int	main(void)
 
 	while(resultadosplit[isplit])
 	{
-		printf("%s", resultadosplit[isplit]);
+		printf("%s\n", resultadosplit[isplit]);
 		free(resultadosplit[isplit]);
 		isplit++;
 	}
 	free(resultadosplit);
 	
-	printf("========== FIN DE TESTS ==========\n");
+	printf("\n========== FIN DE TESTS ==========\n");
 	return (0);
 }
