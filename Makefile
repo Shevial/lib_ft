@@ -51,7 +51,7 @@ SRC = ft_atoi.c \
 
 OBJS = ${SRC:.c=.o}
 CC = gcc
-CCFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
+CCFLAGS = -Wall -Wextra -Werror
 RM = rm -f 
 
 .c.o:
