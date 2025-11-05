@@ -6,29 +6,30 @@
 /*   By: sahevia- <sahevia-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 19:34:05 by sahevia-          #+#    #+#             */
-/*   Updated: 2025/11/01 14:26:27 by sahevia-         ###   ########.fr       */
+/*   Updated: 2025/11/05 21:13:30 by sahevia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static int    ft_digitcount(int n)
+static int	ft_digitcount(int n)
 {
-    int        count;
+	int	count;
 
-    count = 0;
-    if (n == 0)
-        return (1);
-    if (n < 0)
-        count++;
-    while (n != 0)
-    {
-        n /= 10;
-        count++;
-    }
-    return (count);
+	count = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+		count++;
+	while (n != 0)
+	{
+		n /= 10;
+		count++;
+	}
+	return (count);
 }
+
 char	*ft_itoa(int n)
 {
 	int		numbercpy;

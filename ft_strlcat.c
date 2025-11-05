@@ -6,7 +6,7 @@
 /*   By: sahevia- <sahevia-@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 19:27:05 by sahevia-          #+#    #+#             */
-/*   Updated: 2025/11/01 14:21:18 by sahevia-         ###   ########.fr       */
+/*   Updated: 2025/11/05 21:12:49 by sahevia-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dsize)
 
 	dlen = 0;
 	while (dlen < dsize && dst[dlen] != '\0')
-        dlen++;
+		dlen++;
 	slen = ft_strlen(src);
 	i = 0;
 	if (dlen >= dsize)
